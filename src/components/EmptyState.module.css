@@ -1,0 +1,115 @@
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  padding: 40px 24px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.heroIcon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: var(--accent-dim);
+  border: 1px solid rgba(0,229,255,0.25);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.glow {
+  position: absolute;
+  inset: -8px;
+  background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.headline {
+  font-family: var(--font-ui);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.suggestionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  max-width: 560px;
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .suggestionsGrid { grid-template-columns: 1fr; }
+}
+
+.chip {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.4;
+  transition: all 0.15s;
+}
+
+.chip:hover {
+  border-color: rgba(0,229,255,0.3);
+  background: var(--accent-dim);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.chipIcon {
+  font-size: 1rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.chipText { flex: 1; }
+
+.footer {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.dot { color: var(--border-bright); }

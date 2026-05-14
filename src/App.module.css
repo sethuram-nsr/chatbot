@@ -1,0 +1,54 @@
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient background glows */
+.glow1 {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0,229,255,0.04), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow2 {
+  position: fixed;
+  bottom: -80px;
+  right: -80px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(0,255,136,0.03), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Main scroll area */
+.main {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+}
+
+.messagesContainer {
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Message list */
+.messageList {
+  padding: 12px 24px 24px;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  flex: 1;
+}

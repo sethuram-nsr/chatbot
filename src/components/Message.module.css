@@ -1,0 +1,134 @@
+.row {
+  display: flex;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  animation: appear 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  align-items: flex-start;
+}
+
+.row:last-child { border-bottom: none; }
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Avatar */
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+.user .avatar {
+  background: var(--user-bg);
+  border: 1px solid var(--user-border);
+  color: var(--accent);
+}
+
+.assistant .avatar {
+  background: linear-gradient(135deg, rgba(0,229,255,0.15), rgba(0,255,136,0.1));
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  color: var(--accent);
+}
+
+.error .avatar {
+  background: rgba(224, 82, 82, 0.1);
+  border: 1px solid rgba(224, 82, 82, 0.3);
+  color: #e05252;
+}
+
+/* Body */
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 7px;
+}
+
+.name {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.user .name { color: var(--accent); }
+.assistant .name { color: var(--green); }
+.error .name { color: #e05252; }
+
+.time {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.tokens {
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 10px;
+  letter-spacing: 0.06em;
+}
+
+/* Bubble */
+.bubble {
+  font-size: 0.82rem;
+  line-height: 1.72;
+  color: var(--text);
+}
+
+.userText {
+  color: rgba(232, 232, 240, 0.9);
+  font-weight: 400;
+}
+
+/* Error */
+.errorBubble { color: #e05252; }
+
+.errorContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: rgba(224, 82, 82, 0.08);
+  border: 1px solid rgba(224, 82, 82, 0.2);
+  border-left: 3px solid #e05252;
+  padding: 10px 14px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.78rem;
+}
+
+/* Copy button */
+.copyBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: all 0.15s;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.row:hover .copyBtn { opacity: 1; }
+.copyBtn:hover { color: var(--accent); background: var(--accent-dim); }
