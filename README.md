@@ -1,4 +1,5 @@
 # NeuralChat — AI Chatbot (React + OpenAI)
+https://neurallchat.netlify.app/
 
 A polished React chatbot powered by OpenAI GPT-4o-mini.
 
